@@ -1,0 +1,24 @@
+<%- include('./partials/header.ejs', {style : '/student/css/edit.css'}) %>
+<div class="container">
+    <div class="child-1">
+        <h1>Update your data</h1>
+        <form action="/student/update/<%= data._id%>" id="myform" method="post">
+            <div class="elem">
+                <label for="name">Name :</label>
+                <input type="text" id="name" name="name" value="<%= data.name %>">
+            </div>
+            <div class="elem">
+                <label for="age">Age :</label>
+                <input type="number" id="age" name="age" value="<%= data.age %>">
+            </div>
+            <div class="elem">
+                <label for="fees">Fees :</label>
+                <input type="number" id="fees" name="fees" value="<%= data.fees %>">
+            </div>
+            
+            <div class="elem">
+                <button class="btn-add">Update Data</button>
+            </div>
+        </form>
+    </div>
+    <%- include('./partials/footer.ejs') %>

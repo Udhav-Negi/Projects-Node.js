@@ -1,0 +1,57 @@
+<%- include('./partials/header.ejs', {style : '/student/css/index.css'})%>
+<div class="container">
+    <div class="child-1">
+        <h1>Enter your data</h1>
+        <form action="" id="myform" method="post" action="/student">
+            <div class="elem">
+                <label for="name" >Name :</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="elem">
+                <label for="age" >Age :</label>
+                <input type="number" id="age" name="age">
+            </div>
+            <div class="elem">
+                <label for="fees" >Fees :</label>
+                <input type="number" id="fees" name="fees">
+            </div>
+            
+            <div class="elem">
+                <button class="btn-add">Add Data</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="child-2">
+        <h1>Your entries</h1>
+        <table>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Fees</th>
+                <th>Action</th>
+            </tr>
+            <% let i=1; %>
+            <% data.forEach((item)=>{%>
+                <tr>
+                    <td><%= i++%></td>
+                    <td><%= item.name%></td>
+                    <td><%= item.age%></td>
+                    <td><%= item.fees%></td>
+                    <td>
+                        <form action="/student/edit/<%= item._id %>" method="get">
+                        <button class=""><img src="/student/img/update.png" alt="" width="20px" height="20px"></button>
+                        </form>
+
+                        <form action="/student/delete/<%= item._id %>" method="get">
+                        <button><img src="/student/img/delete.png" alt="" width="20px"></button>
+                        </form>
+                    </td>
+                </tr>     
+            <%})%>
+        </table>
+    </div>
+
+</div>
+<%- include('./partials/footer.ejs')%>

@@ -1,0 +1,108 @@
+.container{
+    display: flex;
+}
+.child-1 h1{
+    width: 100%;
+    text-align: center;
+    background-color: #ACE1AF;
+    width: 50vw;
+    margin-left: 10px;
+    text-wrap: nowrap;
+    min-width: inherit;
+}
+.elem{
+    margin: 15px;
+}
+
+#myform{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+#myform label{
+    display: inline-block;
+    color: black;
+    font-size: larger;
+    width: 4rem;
+}
+
+input{
+    border-radius: 10px;
+    border: 3px solid green;
+    width: 36vw;
+    margin-left: 5px;
+    min-width: 40vw;
+}
+
+.btn-add{
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    height: 30px;
+}
+
+.btn-add:hover{
+    cursor: pointer;
+}
+
+.btn-add:active{
+    background-color: white;
+    color: black;
+}
+
+
+
+/* child2 starts here  */
+
+.child-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 3px solid red; */
+    width: 100%;
+}
+
+.child-2 h1{
+    text-align: center;
+    background-color: #C6011F;
+    width: 50vw;
+    margin-left: 10px;
+    text-wrap: nowrap;
+    min-width: inherit;
+}
+
+table, th, td{
+    border: 1px solid black;
+}
+table{
+    min-width: 50%;
+}
+td{
+    text-align: center;
+}
+
+table{
+    width: 100%;
+    border: 1px solid black;
+}
+
+tr td:nth-child(5)
+{
+    display: flex;
+    justify-content: center;
+}
+
+
+@media screen and (max-width : 800px){
+    .container{
+        flex-wrap: wrap;
+    }
+    table{
+        min-width: 100vw;
+    }
+
+    input{
+        min-width: 50vw;
+    }
+}
