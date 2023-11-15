@@ -76,8 +76,9 @@ export default class IndexHandler{
         {
             let id = req.params.id;
             console.log(req.body)
+            let {name, age, fees} = req.body;
 
-            const result = await dataModel.findByIdAndUpdate(id, {name : req.body.name, age : parseInt(req.body.age), fees : parseInt(req.body.fees)}, {returnDocument : "after"})
+            const result = await dataModel.findByIdAndUpdate(id, {name, age, fees}, {returnDocument : "after"})
             console.log(result)
             res.redirect('/student');
         }
